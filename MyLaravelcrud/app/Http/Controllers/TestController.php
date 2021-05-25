@@ -17,4 +17,14 @@
             ));
         }
 
+        public function ospite($id){
+
+            $ospite = Ospiti::findOrFail($id);
+
+            return view('pages.ospite', compact(
+                'ospite'
+            ));
+
+        }
+
     }

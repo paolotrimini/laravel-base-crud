@@ -8,8 +8,10 @@
                     <ul>
                         @foreach($ospiti as $ospite)
                             <li>
-                                {{ $ospite -> name }}
-                                {{ $ospite -> lastname }}
+                                <a href="{{ route('ospite', $ospite -> id) }}">
+                                    {{ $ospite -> name }}
+                                    {{ $ospite -> lastname }}
+                                </a>
                             </li>
                         @endforeach
                     </ul>
