@@ -40,7 +40,7 @@
             ]);
 
             $ospite = Ospite::create($validate);
-            dd($ospite);
+            return redirect() -> route('ospite', $ospite ->id);
         }
 
     }
