@@ -4,12 +4,12 @@
 
     use Illuminate\Http\Request;
 
-    use App\Ospiti;
+    use App\Ospite;
 
     class TestController extends Controller
     {
         public function home(){
-            $ospiti = Ospiti::all();
+            $ospiti = Ospite::all();
             //dd($ospiti);
 
             return view('pages.home', compact(
@@ -19,7 +19,7 @@
 
         public function ospite($id){
 
-            $ospite = Ospiti::findOrFail($id);
+            $ospite = Ospite::findOrFail($id);
 
             return view('pages.ospite', compact(
                 'ospite'
@@ -29,6 +29,18 @@
         public function create(){
 
             return view ('pages.create');
+        }
+
+        public function store(Request $request){
+
+            $validate = $request -> validate([
+                'name' => 'nullable|max:255',
+                'lastname' => 'nullable|max:255',
+
+            ]);
+
+            $ospite = Ospite::create($validate);
+            dd($ospite);
         }
 
     }

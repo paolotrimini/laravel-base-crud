@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ospiti extends Model
+class Ospite extends Model
 {
     protected $table = 'ospiti';
+
 }
