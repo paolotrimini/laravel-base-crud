@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-    Route::get('/', 'TestController@home')
+    Route::get('home', 'TestController@home')
         ->name('home');
+
+
