@@ -24,7 +24,11 @@
             return view('pages.ospite', compact(
                 'ospite'
             ));
+        }
 
+        public function create(){
+
+            return view ('pages.create');
         }
 
     }
